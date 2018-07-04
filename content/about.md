@@ -1,4 +1,8 @@
-Om
+---
+title: "H&G - About"
+...
+
+About
 =========================
 
-Här kommer innehållet till min fina sida.
+About me and the blog.

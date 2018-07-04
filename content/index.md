@@ -1,7 +1,8 @@
 ---
-title: "Min fina titel"
+title: "H&G - Home"
 ...
-Min me-sida
+
+Home page
 =========================
 
-Här kommer innehållet till min fina sida.
+Welcome to my blog!
