@@ -12,8 +12,8 @@ namespace Anax\View;
 // Gather incoming variables and use default values if not set
 $item = isset($item) ? $item : null;
 
-?><h1>Updatera profil</h1>
+?><h1>Update profile</h1>
 
 <?= $form ?>
 
-<a href="../../user">Tillbaka till profil</a>
+<a class="button-link" href="../../user">Back to profile</a>

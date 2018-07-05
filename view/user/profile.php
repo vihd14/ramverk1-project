@@ -27,23 +27,23 @@ $urlToAdminPage = url("user/admin");
 ?>
 
 <?php if ($session->has("user")) : ?>
-    <h1>Profil för <?= $session->get("user"); ?> </h1>
+    <h1>Profile for <?= $session->get("user"); ?> </h1>
     <?php $emailHash = md5(strtolower(trim($session->get("email")))); ?>
     <img src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=200&d=retro" />
     <p><b>E-mail:</b> <?= $session->get("email"); ?></p>
 
-    <a href="<?= $urlToLogout ?>">Logga ut</a> |
-    <a href="<?= url("user/update/{$session->get("user")}"); ?>">Updatera profil</a>
+    <a class="button-link" href="<?= $urlToLogout ?>">Sign out</a>
+    <a class="button-link" href="<?= url("user/update/{$session->get("user")}"); ?>">Edit profile</a>
 
     <?php if ($session->get("user") == "admin") : ?>
-        | <a href="<?= $urlToAdminPage ?>">Hantera användare</a>
+        <a href="<?= $urlToAdminPage ?>">Manage users</a>
     <?php endif; ?>
 
 <?php else : ?>
-    <h1>Profil</h1>
-    <p>Inte inloggad...</p>
-    <a href="<?= $urlToLogin ?>">Logga in</a><br>
-    <a href="<?= $urlToCreate ?>">Skapa användare</a>
+    <h1>Profile</h1>
+    <p>No user signed in.</p>
+    <a class="button-link" href="<?= $urlToLogin ?>">Sign in</a>
+    <a class="button-link" href="<?= $urlToCreate ?>">Create user</a>
     <?php
     return;
 endif; ?>

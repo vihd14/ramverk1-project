@@ -12,7 +12,7 @@
     <header class="site-header">
         <img src="<?= $this->di->get("url")->create("img/fagel2.png") ?>">
         <div class="header-text">
-            <h1>The Home & Garden blog</h1>
+            <h1>Home & Garden</h1>
             <p>How to create your dream environment</p>
         </div>
     </header>

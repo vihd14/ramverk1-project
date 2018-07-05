@@ -80,12 +80,6 @@ class CreateUserForm extends FormModel
             return false;
         }
 
-        // Save to database
-        // $db = $this->di->get("db");
-        // $password = password_hash($password, PASSWORD_DEFAULT);
-        // $db->connect()
-        //    ->insert("User", ["acronym", "password"])
-        //    ->execute([$acronym, $password]);
         $user = new User();
         $user->setDb($this->di->get("db"));
         $user->acronym = $acronym;
@@ -94,6 +88,7 @@ class CreateUserForm extends FormModel
         $user->save();
 
         $this->form->addOutput("User " . $acronym . " was created.");
+        $this->form->addOutput(?><a class="button-link" href="user/login">Log in</a><?=);
         return true;
     }
 }

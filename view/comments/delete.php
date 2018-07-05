@@ -16,12 +16,12 @@ use \Anax\Comment\Comment;
 // Create urls for navigation
 $urlToView = url("comments");
 
-?><h1>Ta bort kommentar</h1>
+?><h1>Remove post</h1>
 
 <?php  ?>
 
 <?= $form ?>
 
 <p>
-    <a href="<?= $urlToView ?>">Tillbaka</a>
+    <a class="button-link" href="<?= $urlToView ?>">Back to chat room</a>
 </p>

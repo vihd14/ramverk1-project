@@ -5,6 +5,7 @@
  */
 
 $urlHome  = $this->di->get("url")->create("");
+$urlChat = $this->di->get("url")->create("comments");
 $urlAbout = $this->di->get("url")->create("about");
 $urlProfile = $this->di->get("url")->create("user");
 
@@ -23,6 +24,13 @@ return [
                 "text" => t("HOME"),
                 "url" => $urlHome,
                 "title" => t("Home"),
+                "mark-if-parent" => true,
+            ],
+
+            "comments" => [
+                "text" => t("CHAT ROOM"),
+                "url" => $urlChat,
+                "title" => t("Chat Room"),
                 "mark-if-parent" => true,
             ],
 
@@ -59,13 +67,20 @@ return [
                 "mark-if-parent" => true,
             ],
 
+            "comments" => [
+                "text" => t("CHAT ROOM"),
+                "url" => $urlChat,
+                "title" => t("Chat Room"),
+                "mark-if-parent" => true,
+            ],
+
             "about" => [
                 "text" => t("ABOUT"),
                 "url" => $urlAbout,
                 "title" => t("About"),
                 "mark-if-parent" => true,
             ],
-            
+
             "user" => [
                 "text" => t("PROFIL"),
                 "url" => $urlProfile,

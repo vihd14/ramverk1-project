@@ -13,7 +13,7 @@
  *
  */
 return [
-    "dsn"             => "sqlite:" . ANAX_INSTALL_PATH . "/data/db.sqlite",
+    "dsn"             => "sqlite:" . ANAX_INSTALL_PATH . "/data/ramverk1-proj.sqlite",
     "username"        => null,
     "password"        => null,
     "driver_options"  => null,

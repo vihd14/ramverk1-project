@@ -19,10 +19,10 @@ $urlToLogin = url("user/login");
 
 ?>
 
-<h2>User <?= $session->get("user") ?> loggade ut.</h2>
+<h2>User <?= $session->get("user") ?> signed out.</h2>
 
 <?php
 
 $session->delete("user");
 
-?><a href="<?= $urlToLogin ?>">Logga in</a>
+?><a class="button-link" href="<?= $urlToLogin ?>">Sign in</a>

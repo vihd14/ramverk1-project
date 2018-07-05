@@ -14,10 +14,10 @@ $urlToView = url("user");
 $urlToAdmin = url("admin");
 
 
-?><h1>Ta bort användare</h1>
+?><h1>Delete user</h1>
 
 <?= $form ?>
 
 <p>
-    <a href="<?= $urlToView ?>">Tillbaka</a>
+    <a class="button-link" href="<?= $urlToView ?>">Back</a>
 </p>

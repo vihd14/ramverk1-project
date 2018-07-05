@@ -22,13 +22,10 @@ img {
     width: 100%;
 }
 
-.navbar a {
+.navbar a:link {
     text-decoration: none;
     color: #988987;
     padding: 0 2em 0 2em;
-
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
 }
 
 .navbar a:visited {
@@ -100,6 +97,8 @@ p {
 }
 
 a:link {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
     text-decoration: none;
     color: #006633;
 }
@@ -118,6 +117,45 @@ a:hover {
 
 .main-wrap p, a {
     padding-left: 1em;
+}
+
+#form-element-submit {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    font-family: "Roboto";
+}
+
+.comment-img-email {
+    display: inline-flex;
+    margin: auto;
+}
+
+.posted-comment {
+    margin-top: 2em;
+    padding: 0 1em 1em 1em;
+    border: 2px solid #3B4C44;
+}
+
+.button-link:link, #form-element-submit {
+    display: inline-flex;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 90%;
+    color: #FFF;
+    background-color: #006633;
+    border: 2px solid #006633;
+}
+
+.button-link:visited {
+    color: #FFF;
+    background-color: #006633;
+    border: 2px solid #006633;
+}
+
+.button-link:hover, #form-element-submit:hover {
+    color: #006633;
+    background-color: #FFF;
+    border: 2px solid #006633;
+    cursor: pointer;
 }
 
 .footer-wrap {

@@ -20,26 +20,26 @@ $session = new Session();
 $items = isset($items) ? $items : null;
 
 
-?><h1>Adminsida</h1>
+?><h1>Admin page</h1>
 
 <?php if ($session->has("user") && $session->get("user") == "admin") : ?>
     <h3>
-        <a href="<?= url("user/delete"); ?>">Ta bort användare</a>
+        <a class="button-link" href="<?= url("user/delete"); ?>">Remove user</a>
     </h3>
     <div class="admin-grid">
         <?php foreach ($items as $item) : ?>
             <div class="users-list-admin">
                 <?php $emailHash = md5(strtolower(trim($item->email))); ?>
                 <img src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=200&d=retro" class="figcenter" />
-                <p><b>Användare:</b> <?= $item->acronym; ?></p>
+                <p><b>User:</b> <?= $item->acronym; ?></p>
                 <p><b>E-mail:</b> <?= $item->email; ?></p>
-                <a href="<?= url("user/update/{$item->acronym}"); ?>">Updatera profil</a>
+                <a class="button-link" href="<?= url("user/update/{$item->acronym}"); ?>">Update profile</a>
             </div>
         <?php endforeach ?>
     </div>
 
 <?php else : ?>
-    <p>Du har inte tillgång till denna sida...</p>
+    <p><strong>You do not have access to this page.</strong></p>
     <?php
     return;
 endif; ?>

@@ -2,11 +2,13 @@
 namespace Viza\CNavigation;
 
 $urlHome  = $app->url->create("");
+$urlChat = $app->url->create("comments");
 $urlAbout = $app->url->create("about");
 $urlProfile = $app->url->create("user");
 
 $menu = array(
   'home'  => array('text'=>'HOME',  'url'=>$urlHome),
+  'comments' => array('text'=>'CHAT ROOM', 'url'=>$urlChat),
   'about' => array('text'=>'ABOUT', 'url'=>$urlAbout),
   'user' => array('text'=>'PROFIL', 'url'=>$urlProfile),
 );

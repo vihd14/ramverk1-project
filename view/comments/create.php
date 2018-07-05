@@ -6,8 +6,8 @@ use \Anax\User\UserLoginForm;
 use \Anax\Session\Session;
 
 /**
- * View to create a new comment.
- */
+* View to create a new comment.
+*/
 // Show all incoming variables/functions
 //var_dump(get_defined_functions());
 //echo showEnvironment(get_defined_vars());
@@ -22,12 +22,12 @@ $items = isset($items) ? $items : null;
 $urlToLogin = url("user/login");
 $urlToViewItems = url("comments");
 
-?><h1>Skriv en kommentar</h1>
+?><h1>Write a post</h1>
 
 <?php if ($session->has("user")) : ?>
     <?= $form ?>
 <?php else : ?>
-    <p>Du måste <a href="<?= $urlToLogin ?>">logga in</a> för att kunna kommentera.</p>
-<?php
+    <p>You need to <a href="<?= $urlToLogin ?>">sign in</a> to post.</p>
+    <?php
     return;
 endif; ?>
