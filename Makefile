@@ -170,7 +170,7 @@ install-tools-php:
 
 	curl -Lso $(PHPMD) http://static.phpmd.org/php/latest/phpmd.phar && chmod 755 $(PHPMD)
 
-	curl -Lso $(PHPUNIT) https://phar.phpunit.de/phpunit-5.7.9.phar && chmod 755 $(PHPUNIT)
+	curl -Lso $(PHPUNIT) https://phar.phpunit.de/phpunit.phar && chmod 755 $(PHPUNIT)
 
 	curl -Lso $(PHPLOC) https://phar.phpunit.de/phploc.phar && chmod 755 $(PHPLOC)
 
@@ -196,10 +196,10 @@ check-tools-php:
 
 
 # target: phpunit            - Run unit tests for PHP.
-# .PHONY: phpunit
-# phpunit: prepare
-# 	@$(call HELPTEXT,$@)
-# 	[ ! -f .phpunit.xml ] || $(PHPUNIT) --configuration .phpunit.xml
+.PHONY: phpunit
+phpunit: prepare
+	@$(call HELPTEXT,$@)
+	[ ! -f .phpunit.xml ] || $(PHPUNIT) --configuration .phpunit.xml
 
 
 
