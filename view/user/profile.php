@@ -29,7 +29,7 @@ $urlToAdminPage = url("user/admin");
 <?php if ($session->has("user")) : ?>
     <h1>Profile for <?= $session->get("user"); ?> </h1>
     <?php $emailHash = md5(strtolower(trim($session->get("email")))); ?>
-    <img src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=200&d=retro" />
+    <img class="profile-picture" src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=100&d=identicon" />
     <p><b>E-mail:</b> <?= $session->get("email"); ?></p>
 
     <a class="button-link" href="<?= $urlToLogout ?>">Sign out</a>

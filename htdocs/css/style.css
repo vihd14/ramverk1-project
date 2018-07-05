@@ -136,6 +136,11 @@ a:hover {
     border: 2px solid #3B4C44;
 }
 
+.profile-picture {
+    display: block;
+    margin-left: auto;
+}
+
 .button-link:link, #form-element-submit {
     display: inline-flex;
     padding: 0.5em 1em 0.5em 1em;
