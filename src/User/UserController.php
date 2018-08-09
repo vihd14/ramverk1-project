@@ -11,6 +11,9 @@ use \Anax\User\HTMLForm\CreateUserForm;
 use \Anax\User\HTMLForm\UpdateUserForm;
 use \Anax\User\HTMLForm\DeleteUserForm;
 
+use \Vihd14\Comment\Comment;
+use \Vihd14\Reply\Reply;
+
 /**
  * A controller class.
  */
@@ -41,7 +44,7 @@ class UserController implements
      */
     public function getIndex()
     {
-        $title      = "Profil - Viza's page";
+        $title      = "H&G - Profil";
         $view       = $this->di->get("view");
         $pageRender = $this->di->get("pageRender");
         $user = new User();
@@ -66,9 +69,72 @@ class UserController implements
      *
      * @return void
      */
+    public function getAllUsers()
+    {
+        $title      = "H&G - Users";
+        $view       = $this->di->get("view");
+        $pageRender = $this->di->get("pageRender");
+        $user = new User();
+        $user->setDb($this->di->get("db"));
+
+        $data = [
+            "items" => $user->findAll(),
+        ];
+
+        $view->add("user/users", $data);
+
+        $pageRender->renderPage(["title" => $title]);
+    }
+
+
+
+    /**
+     * Description.
+     *
+     * @param datatype $variable Description
+     *
+     * @throws Exception
+     *
+     * @return void
+     */
+    public function getUserOverview()
+    {
+        $title      = "H&G - User overview";
+        $view       = $this->di->get("view");
+        $pageRender = $this->di->get("pageRender");
+        $user = new User();
+        $user->setDb($this->di->get("db"));
+        $comment = new Comment();
+        $comment->setDb($this->di->get("db"));
+        $reply = new Reply();
+        $reply->setDb($this->di->get("db"));
+
+
+        $data = [
+            "users" => $user->findAll(),
+            "items" => $comment->findAll(),
+            "replies" => $reply->findAll()
+        ];
+
+        $view->add("user/user-overview", $data);
+
+        $pageRender->renderPage(["title" => $title]);
+    }
+
+
+
+    /**
+     * Description.
+     *
+     * @param datatype $variable Description
+     *
+     * @throws Exception
+     *
+     * @return void
+     */
     public function getLogout()
     {
-        $title      = "Logged out - Viza's page";
+        $title      = "H&G - Logged out";
         $view       = $this->di->get("view");
         $pageRender = $this->di->get("pageRender");
         $user = new User();
@@ -96,7 +162,7 @@ class UserController implements
      */
     public function getPostLogin()
     {
-        $title      = "Login - Viza's page";
+        $title      = "H&G - Sign in";
         $view       = $this->di->get("view");
         $pageRender = $this->di->get("pageRender");
         $form       = new UserLoginForm($this->di);
@@ -104,10 +170,10 @@ class UserController implements
         $form->check();
 
         $data = [
-            "content" => $form->getHTML(),
+            "form" => $form->getHTML(),
         ];
 
-        $view->add("default2/article", $data);
+        $view->add("user/login", $data);
 
         $pageRender->renderPage(["title" => $title]);
     }
@@ -125,7 +191,7 @@ class UserController implements
      */
     public function getPostCreateUser()
     {
-        $title      = "Create user - Viza's page";
+        $title      = "H&G - Create user";
         $view       = $this->di->get("view");
         $pageRender = $this->di->get("pageRender");
         $form       = new CreateUserForm($this->di);
@@ -153,7 +219,7 @@ class UserController implements
      */
     public function getPostUpdate($acronym)
     {
-        $title      = "Update profile - Viza's page";
+        $title      = "H&G - Update profile";
         $view       = $this->di->get("view");
         $pageRender = $this->di->get("pageRender");
         $form       = new UpdateUserForm($this->di, $acronym);
@@ -175,12 +241,12 @@ class UserController implements
      *
      * @return void
      */
-    public function getPostDeleteItem()
+    public function getPostDeleteItem($acronym)
     {
-        $title      = "Ta bort användare";
+        $title      = "H&G - Delete user";
         $view       = $this->di->get("view");
         $pageRender = $this->di->get("pageRender");
-        $form       = new DeleteUserForm($this->di);
+        $form       = new DeleteUserForm($this->di, $acronym);
 
         $form->check();
 
@@ -194,6 +260,35 @@ class UserController implements
     }
 
 
+
+    /**
+     * Description.
+     *
+     * @param datatype $variable Description
+     *
+     * @throws Exception
+     *
+     * @return void
+     */
+    public function getPostDeleted()
+    {
+        $title      = "Deleted account - Viza's page";
+        $view       = $this->di->get("view");
+        $pageRender = $this->di->get("pageRender");
+        $user = new User();
+        $user->setDb($this->di->get("db"));
+
+        $data = [
+            "items" => $user->findAll(),
+        ];
+
+        $view->add("user/deleted", $data);
+
+        $pageRender->renderPage(["title" => $title]);
+    }
+
+
+
     /**
      * Description.
      *
@@ -205,7 +300,7 @@ class UserController implements
      */
     public function getAdminPage()
     {
-        $title      = "Admin page - Viza's page";
+        $title      = "H&G - Admin page";
         $view       = $this->di->get("view");
         $pageRender = $this->di->get("pageRender");
         $user = new User();

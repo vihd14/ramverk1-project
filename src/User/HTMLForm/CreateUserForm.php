@@ -27,7 +27,7 @@ class CreateUserForm extends FormModel
             [
                 "acronym" => [
                     "type"        => "text",
-                    "label"       => "Användarnamn:",
+                    "label"       => "User name:",
                 ],
 
                 "email" => [
@@ -37,12 +37,12 @@ class CreateUserForm extends FormModel
 
                 "password" => [
                     "type"        => "password",
-                    "label"       => "Lösenord:",
+                    "label"       => "Password:",
                 ],
 
                 "password-again" => [
                     "type"        => "password",
-                    "label"       => "Lösenord igen:",
+                    "label"       => "Password again:",
                     "validation" => [
                         "match" => "password"
                     ],
@@ -50,7 +50,7 @@ class CreateUserForm extends FormModel
 
                 "submit" => [
                     "type" => "submit",
-                    "value" => "Skapa",
+                    "value" => "Create user",
                     "callback" => [$this, "callbackSubmit"]
                 ],
             ]
@@ -88,7 +88,7 @@ class CreateUserForm extends FormModel
         $user->save();
 
         $this->form->addOutput("User " . $acronym . " was created.");
-        $this->form->addOutput(?><a class="button-link" href="user/login">Log in</a><?=);
+        $this->form->addOutput('<a class="button-link" href="login">Log in</a>');
         return true;
     }
 }

@@ -29,7 +29,7 @@ class UserLoginForm extends FormModel
             [
                 "user" => [
                     "type"        => "text",
-                    "label"       => "Användarnamn:",
+                    "label"       => "User name:",
                 ],
 
                 "email" => [
@@ -39,12 +39,12 @@ class UserLoginForm extends FormModel
 
                 "password" => [
                     "type"        => "password",
-                    "label"       => "Lösenord:",
+                    "label"       => "Password:",
                 ],
 
                 "submit" => [
                     "type" => "submit",
-                    "value" => "Logga in",
+                    "value" => "Sign in",
                     "callback" => [$this, "callbackSubmit"]
                 ],
             ]
@@ -87,6 +87,5 @@ class UserLoginForm extends FormModel
         $session->set("password", $password);
         $this->di->get("response")->redirect("user");
         return true;
-        //exit;
     }
 }

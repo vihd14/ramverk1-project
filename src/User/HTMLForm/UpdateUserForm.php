@@ -36,7 +36,7 @@ class UpdateUserForm extends FormModel
 
                 "acronym" => [
                     "type"        => "text",
-                    "label"       => "Användarnamn:",
+                    "label"       => "User name:",
                     "validation" => ["not_empty"],
                     "readonly" => true,
                     "value" => $user->acronym,
@@ -51,14 +51,14 @@ class UpdateUserForm extends FormModel
 
                 "password" => [
                     "type"        => "password",
-                    "label"       => "Lösenord:",
+                    "label"       => "Password:",
                     "validation" => ["not_empty"],
                     //"value" => $user->password,
                 ],
 
                 "password-again" => [
                     "type"        => "password",
-                    "label"       => "Lösenord igen:",
+                    "label"       => "Password again:",
                     "validation" => [
                         "match" => "password",
                         "not_empty"
@@ -67,12 +67,12 @@ class UpdateUserForm extends FormModel
 
                 "submit" => [
                     "type" => "submit",
-                    "value" => "Spara",
+                    "value" => "Save",
                     "callback" => [$this, "callbackSubmit"]
                 ],
                 "reset" => [
                     "type"      => "reset",
-                    "value"     => "Återställ"
+                    "value"     => "Reset"
                 ],
             ]
         );
@@ -85,7 +85,7 @@ class UpdateUserForm extends FormModel
      *
      * @param integer $id get details on item with id.
      *
-     * @return Comment
+     * @return User
      */
     public function getItemDetails($acronym)
     {
