@@ -12,6 +12,6 @@ CREATE TABLE Comments (
     "id" INTEGER PRIMARY KEY NOT NULL,
     "title" TEXT,
     "email" TEXT,
-    "text" TEXT,
-    "tags" TEXT
+    "reply" TEXT,
+    "commentId" INTEGER,
 );

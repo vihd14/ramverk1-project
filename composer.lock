@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f0dedc85ad99c529147a97848dabad0",
+    "content-hash": "4dc477345b0fa0a245479db59686c1e4",
     "packages": [
         {
             "name": "anax/common",
@@ -1015,56 +1015,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2018-05-03T23:18:14+00:00"
-        },
-        {
-            "name": "vihd14/comments",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vihd14/comments.git",
-                "reference": "d8ac711c896072a72ee83333e2d3d632741e798a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vihd14/comments/zipball/d8ac711c896072a72ee83333e2d3d632741e798a",
-                "reference": "d8ac711c896072a72ee83333e2d3d632741e798a",
-                "shasum": ""
-            },
-            "require": {
-                "anax/database": "^1.1",
-                "anax/di": "^1.0",
-                "anax/htmlform": "^1.0",
-                "php": ">=7.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Anax\\": "src/",
-                    "Vihd14\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Viktoria Haapaoja",
-                    "email": "viktoria.haa@hotmail.com",
-                    "homepage": "https://dbwebb.se",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Anax comments module.",
-            "homepage": "https://dbwebb.se/anax",
-            "keywords": [
-                "boilerplate",
-                "education",
-                "framework",
-                "micro",
-                "mvc"
-            ],
-            "time": "2018-07-04T14:41:59+00:00"
         }
     ],
     "packages-dev": [],

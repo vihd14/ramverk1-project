@@ -5,9 +5,12 @@
  */
 
 $urlHome  = $this->di->get("url")->create("");
-$urlChat = $this->di->get("url")->create("comments");
+$urlComments = $this->di->get("url")->create("comments");
 $urlAbout = $this->di->get("url")->create("about");
+$urlTags = $this->di->get("url")->create("comments/tags");
+$urlUsers = $this->di->get("url")->create("user/users");
 $urlProfile = $this->di->get("url")->create("user");
+$urlLogin = $this->di->get("url")->create("user/login");
 
 return [
 
@@ -28,9 +31,16 @@ return [
             ],
 
             "comments" => [
-                "text" => t("CHAT ROOM"),
-                "url" => $urlChat,
-                "title" => t("Chat Room"),
+                "text" => t("COMMENTS"),
+                "url" => $urlComments,
+                "title" => t("Comments"),
+                "mark-if-parent" => true,
+            ],
+
+            "tags" => [
+                "text" => t("TAGS"),
+                "url" => $urlTags,
+                "title" => t("Tags"),
                 "mark-if-parent" => true,
             ],
 
@@ -40,10 +50,25 @@ return [
                 "title" => t("About"),
                 "mark-if-parent" => true,
             ],
+
+            "users" => [
+                "text" => t("USERS"),
+                "url" => $urlUsers,
+                "title" => t("Users"),
+                "mark-if-parent" => true,
+            ],
+
             "user" => [
                 "text" => t("PROFIL"),
                 "url" => $urlProfile,
                 "title" => t("Profil"),
+                "mark-if-parent" => true,
+            ],
+
+            "login" => [
+                "text" => t("SIGN IN"),
+                "url" => $urlLogin,
+                "title" => t("Sign in"),
                 "mark-if-parent" => true,
             ],
         ],
@@ -68,9 +93,16 @@ return [
             ],
 
             "comments" => [
-                "text" => t("CHAT ROOM"),
-                "url" => $urlChat,
-                "title" => t("Chat Room"),
+                "text" => t("COMMENTS"),
+                "url" => $urlComments,
+                "title" => t("Comments"),
+                "mark-if-parent" => true,
+            ],
+
+            "tags" => [
+                "text" => t("TAGS"),
+                "url" => $urlTags,
+                "title" => t("Tags"),
                 "mark-if-parent" => true,
             ],
 
@@ -81,10 +113,23 @@ return [
                 "mark-if-parent" => true,
             ],
 
+            "users" => [
+                "text" => t("USERS"),
+                "url" => $urlProfile,
+                "title" => t("Users"),
+                "mark-if-parent" => true,
+            ],
+
             "user" => [
                 "text" => t("PROFIL"),
                 "url" => $urlProfile,
                 "title" => t("Profil"),
+                "mark-if-parent" => true,
+            ],
+            "login" => [
+                "text" => t("SIGN IN"),
+                "url" => $urlLogin,
+                "title" => t("Sign in"),
                 "mark-if-parent" => true,
             ],
         ],

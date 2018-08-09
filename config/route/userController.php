@@ -11,6 +11,18 @@ return [
             "callable" => ["userController", "getIndex"],
         ],
         [
+            "info" => "See all users.",
+            "requestMethod" => "get",
+            "path" => "users",
+            "callable" => ["userController", "getAllUsers"],
+        ],
+        [
+            "info" => "User overview.",
+            "requestMethod" => "get",
+            "path" => "user-overview/{user:alpha}",
+            "callable" => ["userController", "getUserOverview"],
+        ],
+        [
             "info" => "Logout a user.",
             "requestMethod" => "get|post",
             "path" => "logout",
@@ -37,8 +49,14 @@ return [
         [
             "info" => "Delete an item.",
             "requestMethod" => "get|post",
-            "path" => "delete",
+            "path" => "delete/{user}",
             "callable" => ["userController", "getPostDeleteItem"],
+        ],
+        [
+            "info" => "Account was deleted.",
+            "requestMethod" => "get|post",
+            "path" => "deleted",
+            "callable" => ["userController", "getPostDeleted"],
         ],
         [
             "info" => "Admin page.",

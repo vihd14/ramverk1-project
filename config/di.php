@@ -142,5 +142,13 @@ return [
                 return $obj;
             }
         ],
+        "replyController" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Vihd14\Reply\ReplyController();
+                $obj->setDI($this);
+                return $obj;
+            }
+        ],
     ],
 ];

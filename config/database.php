@@ -22,7 +22,7 @@ return [
     "session_key"     => "Anax\Database",
 
     // True to be very verbose during development
-    "verbose"         => null,
+    "verbose"         => false,
 
     // True to be verbose on connection failed
     "debug_connect"   => false,

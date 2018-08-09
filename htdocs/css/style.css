@@ -113,10 +113,11 @@ a:hover {
 
 .main-wrap {
     padding: 1.5em;
+    max-width: 80%;
 }
 
-.main-wrap p, a {
-    padding-left: 1em;
+.main-wrap p {
+    line-height: 1.5;
 }
 
 #form-element-submit {
@@ -125,23 +126,94 @@ a:hover {
     font-family: "Roboto";
 }
 
-.comment-img-email {
-    display: inline-flex;
-    margin: auto;
+.comment-title {
+    text-decoration: underline;
 }
 
-.posted-comment {
+.comment-id, .comment-img, .comment-email {
+    display: block;
+}
+
+.comment-email {
+    padding-bottom: 1em;
+}
+
+.posted-comment, .posted-reply {
     margin-top: 2em;
-    padding: 0 1em 1em 1em;
+    padding: 1em;
     border: 2px solid #3B4C44;
 }
 
-.profile-picture {
+.comment-reply {
+    margin-left: 5em;
+}
+
+.reply-line {
+    border-bottom: solid 1px grey;
+}
+
+textarea {
+    font-family: "Roboto";
+    width: 90%;
+    height: 10em;
+}
+
+.tag-section {
+    font-style: italic;
+    font-size: 90%;
+    height: unset;
+    padding: 0.5em 0 0.5em 0;
+    margin-bottom: 1em;
+    border-bottom: solid 1px grey;
+}
+
+.user-wrapper {
     display: block;
+    text-align: center;
+}
+
+.users-list {
+    display: inline-block;
+    flex-direction: column;
+    padding: 1em;
+    margin: 0.5em;
+    border: solid 1px grey;
+}
+
+.users-list p {
+    color: black;
+}
+
+.user-overview-h2 {
+    border-top: solid 1px grey;
+    padding-top: 0.5em;
+}
+
+.profile-wrap {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.profile-picture {
     margin-left: auto;
 }
 
-.button-link:link, #form-element-submit {
+.profile-content {
+    flex-direction: column;
+}
+
+.profile-button {
+    text-align: right;
+    margin-top: 1.5em;
+}
+
+input.button-link {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    font-family: "Roboto";
+}
+
+.button-link, .button-link:link, #form-element-submit {
     display: inline-flex;
     padding: 0.5em 1em 0.5em 1em;
     font-size: 90%;
@@ -161,6 +233,26 @@ a:hover {
     background-color: #FFF;
     border: 2px solid #006633;
     cursor: pointer;
+}
+
+.edit-delete {
+    display: inline-block;
+}
+
+.delete:link, #form-element-submit.delete {
+    background-color: darkred;
+    border: 2px solid darkred;
+}
+
+.delete:visited {
+    background-color: darkred;
+    border: 2px solid darkred;
+}
+
+.delete:hover, #form-element-submit:hover.delete {
+    color: darkred;
+    background-color: #FFF;
+    border: 2px solid darkred;
 }
 
 .footer-wrap {
