@@ -29,15 +29,17 @@ $username = array_slice(explode('/', rtrim($url, '/')), -1)[0];
             <h2 class="user-overview-h2">Comments by <?= $username ?></h2>
             <?php foreach ($items as $item) :
                 if ($user->email == $item->email) : ?>
-                    - <a href=" <?= url("comments/comment-view/{$item->id}"); ?>"><?= $item->title ?></a><br><br>
+                    - <a href="<?= url("comments/comment-view/{$item->id}"); ?>"><?= $item->title ?></a><br><br>
                 <?php endif;
             endforeach; ?>
 
             <h2 class="user-overview-h2">Replies by <?= $username ?></h2>
             <?php foreach ($replies as $reply) :
-                if ($user->email == $reply->email) : ?>
-                    <p>- <?= $reply->title ?></p>
-                <?php endif;
+                if ($user->email == $reply->email) :
+                    foreach ($items as $item) if ($item->id == $reply->commentId) : ?>
+                        Reply to: <a href="<?= url("comments/comment-view/{$reply->commentId}") ?>"><?= $item->title ?></a><br><br>
+                    <?php endif;
+                endif;
             endforeach; ?>
         </div>
     <?php endif;
