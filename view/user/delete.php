@@ -15,6 +15,7 @@ $urlToAdmin = url("admin");
 
 
 ?><h1>Delete user</h1>
+<p>Are you sure you want to delete this account?</p>
 
 <?= $form ?>
 

@@ -28,16 +28,22 @@ $urlToAdminPage = url("user/admin");
 
 <?php if ($session->has("user")) : ?>
     <h1>Profile for <?= $session->get("user"); ?> </h1>
-    <?php $emailHash = md5(strtolower(trim($session->get("email")))); ?>
-    <img class="profile-picture" src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=100&d=identicon" />
-    <p><b>E-mail:</b> <?= $session->get("email"); ?></p>
+    <div class="profile-wrap">
+        <?php $emailHash = md5(strtolower(trim($session->get("email")))); ?>
+        <img class="profile-picture" src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=100&d=identicon" />
+        <div class="profile-content">
+            <p><b>E-mail:</b> <?= $session->get("email"); ?></p>
 
-    <a class="button-link" href="<?= $urlToLogout ?>">Sign out</a>
-    <a class="button-link" href="<?= url("user/update/{$session->get("user")}"); ?>">Edit profile</a>
-
-    <?php if ($session->get("user") == "admin") : ?>
-        <a href="<?= $urlToAdminPage ?>">Manage users</a>
-    <?php endif; ?>
+            <?php if ($session->get("user") == "admin") : ?>
+                <a href="<?= $urlToAdminPage ?>">Manage users</a>
+            <?php endif; ?>
+        </div>
+    </div>
+    <div class="profile-button">
+        <a class="button-link" href="<?= $urlToLogout ?>">Sign out</a>
+        <a class="button-link" href="<?= url("user/update/{$session->get("user")}"); ?>">Edit profile</a>
+        <a class="button-link delete" href="<?= url("user/delete/{$session->get("user")}"); ?>">Delete account</a>
+    </div>
 
 <?php else : ?>
     <h1>Profile</h1>
