@@ -13,5 +13,6 @@ namespace Anax\View;
 $item = isset($item) ? $item : null;
 
 ?><h1>Edit post</h1>
+<p style="font-style: italic; color: grey; font-size: 90%">Use Markdown to style your comment. See <a style="padding: unset; text-decoration: underline" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">cheat sheet</a> for help on how to use Markdown.</p>
 
 <?= $form ?>

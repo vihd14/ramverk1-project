@@ -17,6 +17,7 @@ use \Anax\Comment\Comment;
 $urlToView = url("comments");
 
 ?><h1>Remove post</h1>
+<p>Are you sure you want to delete this comment?</p>
 
 <?php  ?>
 
