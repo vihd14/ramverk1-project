@@ -27,9 +27,6 @@ if ($session->has("user")) : ?>
         See <a style="padding: unset; text-decoration: underline" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">cheat sheet</a>
         for help on how to use Markdown.
     </p>
-    <p style="font-style: italic; color: grey; font-size: 90%">OBS! Separate each tag with a space and comma
-        (see example in placeholder). Don´t put spaces in a tag, use camel case instead (ex. flowerPots, housePlants).
-    </p>
 
     <?= $form ?>
 <?php else : ?>

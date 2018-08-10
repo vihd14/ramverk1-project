@@ -6,6 +6,7 @@ use \Anax\HTMLForm\FormModel;
 use \Anax\DI\DIInterface;
 use \Vihd14\Reply\Reply;
 use \Vihd14\Comment\Comment;
+use \Anax\Session\Session;
 
 /**
  * Form to create an item.
@@ -22,6 +23,8 @@ class CreateReplyForm extends FormModel
         parent::__construct($di);
         $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $commentId = array_slice(explode('/', rtrim($url, '/')), -1)[0];
+        $session = new Session();
+        $userEmail = $session->get("email");
         $this->form->create(
             [
                 "id" => __CLASS__,
@@ -43,7 +46,9 @@ class CreateReplyForm extends FormModel
                 "email" => [
                     "type" => "text",
                     "label" => "E-mail:",
+                    "readonly" => true,
                     "validation" => ["not_empty"],
+                    "value" => $userEmail,
                 ],
                 "reply" => [
                     "type" => "textarea",
@@ -77,6 +82,6 @@ class CreateReplyForm extends FormModel
         $reply->email = $this->form->value("email");
         $reply->reply = $this->form->value("reply");
         $reply->save();
-        $this->di->get("response")->redirect("comments");
+        $this->di->get("response")->redirect("comments/comment-view/{$reply->commentId}");
     }
 }

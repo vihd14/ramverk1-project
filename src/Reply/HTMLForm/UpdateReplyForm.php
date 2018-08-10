@@ -109,6 +109,6 @@ class UpdateReplyForm extends FormModel
         $reply->email = $this->form->value("email");
         $reply->reply = $this->form->value("reply");
         $reply->save();
-        $this->di->get("response")->redirect("comments");
+        $this->di->get("response")->redirect("comments/comment-view/{$reply->commentId}");
     }
 }
