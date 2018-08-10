@@ -241,12 +241,12 @@ class UserController implements
      *
      * @return void
      */
-    public function getPostDeleteItem($acronym)
+    public function getPostDeleteItem($id)
     {
         $title      = "H&G - Delete user";
         $view       = $this->di->get("view");
         $pageRender = $this->di->get("pageRender");
-        $form       = new DeleteUserForm($this->di, $acronym);
+        $form       = new DeleteUserForm($this->di, $id);
 
         $form->check();
 

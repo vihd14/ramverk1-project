@@ -23,17 +23,16 @@ $items = isset($items) ? $items : null;
 ?><h1>Admin page</h1>
 
 <?php if ($session->has("user") && $session->get("user") == "admin") : ?>
-    <h3>
-        <a class="button-link" href="<?= url("user/delete"); ?>">Remove user</a>
-    </h3>
     <div class="admin-grid">
         <?php foreach ($items as $item) : ?>
             <div class="users-list-admin">
                 <?php $emailHash = md5(strtolower(trim($item->email))); ?>
-                <img src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=200&d=retro" class="figcenter" />
+                <img src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=200&d=identicon" class="figcenter" />
                 <p><b>User:</b> <?= $item->acronym; ?></p>
                 <p><b>E-mail:</b> <?= $item->email; ?></p>
                 <a class="button-link" href="<?= url("user/update/{$item->acronym}"); ?>">Update profile</a>
+                <a class="button-link delete" href="<?= url("user/delete/{$item->id}"); ?>">Delete</a><br>
+                <p style="border-bottom: 1px solid grey;"></p>
             </div>
         <?php endforeach ?>
     </div>

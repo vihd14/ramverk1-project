@@ -5,10 +5,13 @@ namespace Anax\View;
 use \Vihd14\Comment\Comment;
 use \Vihd14\Reply\Reply;
 use \Anax\User\User;
+use \Anax\Session\Session;
 
 /**
 * View to display profile page.
 */
+// Start the session.
+$session = new Session();
 // Gather incoming variables and use default values if not set
 $users = isset($users) ? $users : null;
 $items = isset($items) ? $items : null;
@@ -43,6 +46,10 @@ $username = array_slice(explode('/', rtrim($url, '/')), -1)[0];
                     endforeach;
                 endif;
             endforeach; ?>
+            <?php if ($session->has("user") && $session->get("email") == $user->email || $session->get("user") == "admin") : ?>
+                <a class="button-link" href="<?= url("user/update/{$user->acronym}"); ?>">Update profile</a>
+                <a class="button-link delete" href="<?= url("user/delete/{$user->id}"); ?>">Delete</a>
+            <?php endif; ?>
         </div>
     <?php endif;
 endforeach; ?>

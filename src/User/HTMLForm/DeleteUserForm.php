@@ -16,10 +16,10 @@ class DeleteUserForm extends FormModel
      *
      * @param Anax\DI\DIInterface $di a service container
      */
-    public function __construct(DIInterface $di, $acronym)
+    public function __construct(DIInterface $di, $id)
     {
         parent::__construct($di);
-        $user = $this->getItemDetails($acronym);
+        $user = $this->getItemDetails($id);
         $this->form->create(
             [
                 "id" => __CLASS__,
@@ -51,7 +51,7 @@ class DeleteUserForm extends FormModel
 
                 "submit" => [
                     "type" => "submit",
-                    "options" => $this->getAllItems($acronym),
+                    "options" => $this->getAllItems($id),
                     "class" => "delete",
                     "value" => "Delete",
                     "callback" => [$this, "callbackSubmit"]
@@ -72,11 +72,18 @@ class DeleteUserForm extends FormModel
         $user = new User();
         $user->setDb($this->di->get("db"));
         $users = ["-1" => "Choose an object"];
-        foreach ($user->findAll() as $obj) {
-            $users[$obj->id] = "{$obj->acronym} ({$obj->id})";
-        }
+        $obj = $user->find("id", $id);
+        $users[$obj->id] = "{$obj->email} ({$obj->id})";
 
         return $users;
+        // $user = new User();
+        // $user->setDb($this->di->get("db"));
+        // $users = ["-1" => "Choose an object"];
+        // foreach ($user->findAll() as $obj) {
+        //     $users[$obj->id] = "{$obj->acronym} ({$obj->id})";
+        // }
+        //
+        // return $users;
     }
 
 
@@ -88,11 +95,11 @@ class DeleteUserForm extends FormModel
      *
      * @return User
      */
-    public function getItemDetails($acronym)
+    public function getItemDetails($id)
     {
         $user = new User();
         $user->setDb($this->di->get("db"));
-        $user->find("acronym", $acronym);
+        $user->find("id", $id);
         return $user;
     }
 

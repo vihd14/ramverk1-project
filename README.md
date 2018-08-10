@@ -21,8 +21,8 @@ Assuming that you have `composer` installed, run composer update to install all 
 
 ### Database
 Use an SQLite database for this project and run the sql-code for the files in `sql/ddl/`.  
-Insert the default users `doe/doe@dbwebb.se/doe` and `admin/admin@dbwebb.se/admin`.  
-Change the name of the file in `data/` to match your own database.
+Insert the default users `doe/doe@dbwebb.se/doe` and `admin/admin@dbwebb.se/admin`.
+Change in the file `config/database.php` to connect to your own database.
 
 ### .htaccess
 Change the file `htdocs/.htaccess` to suit your own install.
