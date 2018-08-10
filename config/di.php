@@ -150,5 +150,13 @@ return [
                 return $obj;
             }
         ],
+        "baseController" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Vihd14\Base\BaseController();
+                $obj->setDI($this);
+                return $obj;
+            }
+        ],
     ],
 ];

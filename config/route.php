@@ -22,6 +22,11 @@ return [
             "file" => __DIR__ . "/route/flat-file-content.php",
         ],
         [
+            // Add routes from commentController and mount on comments/
+            "mount" => null,
+            "file" => __DIR__ . "/route/baseController.php",
+        ],
+        [
             // Add routes from userController and mount on user/
             "mount" => "user",
             "file" => __DIR__ . "/route/userController.php",

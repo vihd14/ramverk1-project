@@ -8,7 +8,7 @@ X Användaren skall ha en profil som kan uppdateras.
 
 X Användarens bild skall vara en gravatar.
 
-/ Webbplatsen skall ha en förstasida,
+X Webbplatsen skall ha en förstasida,
 
 X en sida för frågor,
 
@@ -18,11 +18,11 @@ X och en sida för användare.
 
 X Det skall finnas en About-sida med information om webbplatsen, dess GitHub-repo och dig själv.
 
-/ En användare kan ställa frågor, eller besvara dem.
+X En användare kan ställa frågor, eller besvara dem.
 
 X Alla inlägg som en användare gör kan kopplas till denna.
 
-/ Klickar man på en användare så ser man vilka frågor som användaren ställt och vilka frågor som besvarats.
+X Klickar man på en användare så ser man vilka frågor som användaren ställt och vilka frågor som besvarats.
 
 X En fråga kan ha en eller flera taggar kopplade till sig.
 
@@ -30,13 +30,13 @@ X När man listar en tagg kan man se de frågor som har den taggen.
 
 X Klicka på en tagg för att komma till de frågor som har taggen kopplat till sig.
 
-En fråga kan ha många svar.
+X En fråga kan ha många svar.
 
-Varje fråga och svar kan i sin tur ha kommentarer kopplade till sig.
+X Varje fråga och svar kan i sin tur ha kommentarer kopplade till sig.
 
 X Alla frågor, svar och kommentarer skrivs i Markdown.
 
-Förstasidan skall ge en översikt av senaste frågor tillsammans med de mest populära taggarna och de mest aktiva användarna.
+X Förstasidan skall ge en översikt av senaste frågor tillsammans med de mest populära taggarna och de mest aktiva användarna.
 
 Webbplatsen skall finnas på GitHub, tillsammans med en README som beskriver hur man checkar ut och installerar sin egen version.
 

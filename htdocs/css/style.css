@@ -99,7 +99,6 @@ p {
 a:link {
     -webkit-transition: 0.5s;
     transition: 0.5s;
-    text-decoration: none;
     color: #006633;
 }
 
@@ -113,11 +112,24 @@ a:hover {
 
 .main-wrap {
     padding: 1.5em;
-    max-width: 80%;
 }
 
 .main-wrap p {
     line-height: 1.5;
+}
+
+.index-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.top-comments, .top-tags, .top-users {
+    width: 33%;
+    display: inline-block;
+    flex-direction: column;
+    padding: 0 1em 1em 1em;
+    margin: 3em;
+    border: solid 1px grey;
 }
 
 #form-element-submit {
@@ -214,6 +226,7 @@ input.button-link {
 }
 
 .button-link, .button-link:link, #form-element-submit {
+    text-decoration: none;
     display: inline-flex;
     padding: 0.5em 1em 0.5em 1em;
     font-size: 90%;
