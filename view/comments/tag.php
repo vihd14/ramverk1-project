@@ -29,10 +29,8 @@ $tag = array_slice(explode('/', rtrim($url, '/')), -1)[0];
     return;
 endif;
 
-// $tag_array = array();
-//
 foreach ($items as $item) :
     if ($item->tags == $tag) : ?>
-        <a href="<?= url("comments/comment-view/{$item->id}"); ?>"><?= $item->title, " - ", $session->get("user") ?></a>
-    <?php endif;
+        <a href="<?= url("comments/comment-view/{$item->id}"); ?>"><?= $item->title, " - ", $session->get("user") ?></a><?php
+    endif;
 endforeach; ?>

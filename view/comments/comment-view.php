@@ -31,8 +31,8 @@ foreach ($items as $item) :
                 <div class="tag-section"><?php
                 $tag_array = explode(", ", $item->tags);
                 echo "<a href='../tag/{$item->tags}'>#" . implode("</a>, <a href='../tags'>#", $tag_array) . "</a>";
-                ?></div><?php
-            endif;
+                ?></div>
+            <?php endif;
 
             $emailHash = md5(strtolower(trim($item->email))); ?>
             <img class="comment-img" src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=50&d=identicon" />
@@ -71,8 +71,8 @@ foreach ($items as $item) :
                             </div>
                         <?php endif; ?>
                     </div>
-                </div>
-            <?php endif;
-        endforeach;
+                </div><?php
+            endif;
+endforeach;
     endif;
 endforeach; ?>

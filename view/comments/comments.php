@@ -35,29 +35,29 @@ endif;
 $tag_array = array();
 
 foreach ($items as $item) : ?>
-<div class="posted-comment">
-    <h2 class="comment-title"><a href="<?= url("comments/comment-view/{$item->id}"); ?>"><?= $item->title ?></a></h2>
-    <p class="comment-text"><?= $di->get("textfilter")->markdown($item->text) ?></p>
+    <div class="posted-comment">
+        <h2 class="comment-title"><a href="<?= url("comments/comment-view/{$item->id}"); ?>"><?= $item->title ?></a></h2>
+        <p class="comment-text"><?= $di->get("textfilter")->markdown($item->text) ?></p>
 
-    <?php if ($item->tags != null) : ?>
-        <div class="tag-section"><?php
-        $tag_array = explode(", ", $item->tags);
-        foreach ($tag_array as $tag) {
-            echo "<a href='comments/tag/{$tag}'>#{$tag}</a> ";
-        }
-        ?></div><?php
-    endif;
+        <?php if ($item->tags != null) : ?>
+            <div class="tag-section"><?php
+            $tag_array = explode(", ", $item->tags);
+            foreach ($tag_array as $tag) {
+                echo "<a href='comments/tag/{$tag}'>#{$tag}</a> ";
+            }
+            ?></div>
+        <?php endif;
 
-    $emailHash = md5(strtolower(trim($item->email))); ?>
-    <img class="comment-img" src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=50&d=identicon" />
-    <p class="comment-email"><?= $item->email ?></p>
+        $emailHash = md5(strtolower(trim($item->email))); ?>
+        <img class="comment-img" src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=50&d=identicon" />
+        <p class="comment-email"><?= $item->email ?></p>
 
-    <?php if ($session->has("user") && $session->get("email") == $item->email || $session->get("user") == "admin") : ?>
-        <div class="edit-delete">
-            <a class="button-link" href="<?= url("comments/update/{$item->id}"); ?>">Edit</a>
-            <a class="button-link delete" href="<?= url("comments/delete/{$item->id}"); ?>">Delete</a>
-        </div>
+        <?php if ($session->has("user") && $session->get("email") == $item->email || $session->get("user") == "admin") : ?>
+            <div class="edit-delete">
+                <a class="button-link" href="<?= url("comments/update/{$item->id}"); ?>">Edit</a>
+                <a class="button-link delete" href="<?= url("comments/delete/{$item->id}"); ?>">Delete</a>
+            </div>
 
-    <?php endif; ?>
-</div>
+        <?php endif; ?>
+    </div>
 <?php endforeach;

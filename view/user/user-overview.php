@@ -32,24 +32,24 @@ $username = array_slice(explode('/', rtrim($url, '/')), -1)[0];
             <h2 class="user-overview-h2">Comments by <?= $username ?></h2>
             <?php foreach ($items as $item) :
                 if ($user->email == $item->email) : ?>
-                    - <a href="<?= url("comments/comment-view/{$item->id}"); ?>"><?= $item->title ?></a><br><br>
-                <?php endif;
-            endforeach; ?>
+                    - <a href="<?= url("comments/comment-view/{$item->id}"); ?>"><?= $item->title ?></a><br><br><?php
+                endif;
+endforeach; ?>
 
             <h2 class="user-overview-h2">Replies by <?= $username ?></h2>
             <?php foreach ($replies as $reply) :
                 if ($user->email == $reply->email) :
                     foreach ($items as $item) :
                         if ($item->id == $reply->commentId) : ?>
-                            Reply to: <a href="<?= url("comments/comment-view/{$reply->commentId}") ?>"><?= $item->title ?></a><br><br>
-                        <?php endif;
+                            Reply to: <a href="<?= url("comments/comment-view/{$reply->commentId}") ?>"><?= $item->title ?></a><br><br><?php
+                        endif;
                     endforeach;
                 endif;
-            endforeach; ?>
+endforeach; ?>
             <?php if ($session->has("user") && $session->get("email") == $user->email || $session->get("user") == "admin") : ?>
                 <a class="button-link" href="<?= url("user/update/{$user->acronym}"); ?>">Update profile</a>
                 <a class="button-link delete" href="<?= url("user/delete/{$user->id}"); ?>">Delete</a>
             <?php endif; ?>
-        </div>
-    <?php endif;
+        </div><?php
+    endif;
 endforeach; ?>
