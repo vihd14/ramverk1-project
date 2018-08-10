@@ -42,7 +42,9 @@ foreach ($items as $item) : ?>
     <?php if ($item->tags != null) : ?>
         <div class="tag-section"><?php
         $tag_array = explode(", ", $item->tags);
-        echo "<a href='comments/tag/{$item->tags}'>#" . implode("</a>, <a href='comments/tags'>#", $tag_array) . "</a>";
+        foreach ($tag_array as $tag) {
+            echo "<a href='comments/tag/{$tag}'>#{$tag}</a> ";
+        }
         ?></div><?php
     endif;
 

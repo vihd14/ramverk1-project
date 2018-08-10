@@ -6,6 +6,8 @@ use \Anax\HTMLForm\FormModel;
 use \Anax\DI\DIInterface;
 use \Vihd14\Comment\Comment;
 
+use \Anax\Session\Session;
+
 /**
  * Form to create an item.
  */
@@ -19,6 +21,8 @@ class CreateForm extends FormModel
     public function __construct(DIInterface $di)
     {
         parent::__construct($di);
+        $session = new Session();
+        $userEmail = $session->get("email");
         $this->form->create(
             [
                 "id" => __CLASS__,
@@ -33,7 +37,9 @@ class CreateForm extends FormModel
                 "email" => [
                     "type" => "text",
                     "label" => "E-mail:",
+                    "readonly" => true,
                     "validation" => ["not_empty"],
+                    "value" => $userEmail,
                 ],
                 "text" => [
                     "type" => "textarea",

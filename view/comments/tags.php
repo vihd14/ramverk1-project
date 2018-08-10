@@ -24,16 +24,36 @@ $tag_array = array();
 foreach ($items as $item) :
     if ($item->tags != null) {
         $explodedArray = explode(", ", $item->tags);
-
         foreach ($explodedArray as $value) {
             array_push($tag_array, $value);
         }
-        $tag_array = array_unique($tag_array);
-        asort($tag_array);
     }
 endforeach;
+$tag_count = array_count_values($tag_array);
+$tag_unique = array_unique($tag_array);
+$tag_array = array_combine($tag_unique, $tag_count);
 
-foreach ($items as $item) {
-    $tag_array = explode(", ", $item->tags);
-    echo "<a href='tag/{$item->tags}'>#" . implode("</a>, <a href='tags'>#", $tag_array) . "</a><p></p>";
+arsort($tag_array);
+
+foreach ($tag_array as $key => $value) {
+    echo "<a href='tag/{$key}'>#{$key}</a> ({$value})<br><br>";
 }
+
+// $tag_array = array();
+//
+// foreach ($items as $item) :
+//     if ($item->tags != null) {
+//         $explodedArray = explode(", ", $item->tags);
+//
+//         foreach ($explodedArray as $value) {
+//             array_push($tag_array, $value);
+//         }
+//         $tag_array = array_unique($tag_array);
+//         asort($tag_array);
+//     }
+// endforeach;
+//
+// foreach ($items as $item) {
+//     $tag_array = explode(", ", $item->tags);
+//     echo "<a href='tag/{$item->tags}'>#" . implode("</a>, <a href='tags'>#", $tag_array) . "</a><p></p>";
+// }
