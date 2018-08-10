@@ -132,7 +132,7 @@ a:hover {
     border: solid 1px grey;
 }
 
-#form-element-submit {
+#form-element-submit, #form-element-reset {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     font-family: "Roboto";
@@ -225,7 +225,7 @@ input.button-link {
     font-family: "Roboto";
 }
 
-.button-link, .button-link:link, #form-element-submit {
+.button-link, .button-link:link, #form-element-submit, #form-element-reset {
     text-decoration: none;
     display: inline-flex;
     padding: 0.5em 1em 0.5em 1em;
@@ -241,7 +241,7 @@ input.button-link {
     border: 2px solid #006633;
 }
 
-.button-link:hover, #form-element-submit:hover {
+.button-link:hover, #form-element-submit:hover, #form-element-reset:hover {
     color: #006633;
     background-color: #FFF;
     border: 2px solid #006633;

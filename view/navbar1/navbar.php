@@ -14,7 +14,7 @@ $menu = array(
     'comments' => array('text'=>'COMMENTS', 'url'=>$urlComments),
     'tags' => array('text'=>'TAGS', 'url'=>$urlTags),
     'users' => array('text'=>'USERS', 'url'=>$urlUsers),
-    'user' => array('text'=>'PROFIL', 'url'=>$urlProfile),
+    'user' => array('text'=>'PROFILE', 'url'=>$urlProfile),
     'about' => array('text'=>'ABOUT', 'url'=>$urlAbout),
     'login' => array('text'=>'SIGN IN', 'url'=>$urlLogin),
 );

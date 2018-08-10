@@ -44,7 +44,7 @@ class UserController implements
      */
     public function getIndex()
     {
-        $title      = "H&G - Profil";
+        $title      = "H&G - Profile";
         $view       = $this->di->get("view");
         $pageRender = $this->di->get("pageRender");
         $user = new User();

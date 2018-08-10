@@ -59,9 +59,9 @@ return [
             ],
 
             "user" => [
-                "text" => t("PROFIL"),
+                "text" => t("PROFILE"),
                 "url" => $urlProfile,
-                "title" => t("Profil"),
+                "title" => t("Profile"),
                 "mark-if-parent" => true,
             ],
 
@@ -121,9 +121,9 @@ return [
             ],
 
             "user" => [
-                "text" => t("PROFIL"),
+                "text" => t("PROFILE"),
                 "url" => $urlProfile,
-                "title" => t("Profil"),
+                "title" => t("Profile"),
                 "mark-if-parent" => true,
             ],
             "login" => [
