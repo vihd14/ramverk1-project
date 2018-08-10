@@ -40,9 +40,9 @@ foreach ($items as $item) :
 
             <?php if ($session->has("user")) : ?>
                 <a class="button-link" href="<?= url("reply/reply/{$item->id}"); ?>">Reply</a>
-            <?php endif;
+            <?php endif; ?>
 
-            if ($session->has("user") && $session->get("email") == $item->email || $session->get("user") == "admin") : ?>
+            <?php if ($session->has("user") && $session->get("email") == $item->email || $session->get("user") == "admin") : ?>
                 <div class="edit-delete">
                     <a class="button-link" href="<?= url("comments/update/{$item->id}"); ?>">Edit</a>
                     <a class="button-link delete" href="<?= url("comments/delete/{$item->id}"); ?>">Delete</a>
@@ -62,9 +62,9 @@ foreach ($items as $item) :
 
                         <?php if ($session->has("user")) : ?>
                             <a class="button-link" href="<?= url("reply/reply/{$reply->id}"); ?>">Reply</a>
-                        <?php endif;
+                        <?php endif; ?>
 
-                        if ($session->has("user") && $session->get("email") == $reply->email || $session->get("user") == "admin") : ?>
+                        <?php if ($session->has("user") && $session->get("email") == $reply->email || $session->get("user") == "admin") : ?>
                             <div class="edit-delete">
                                 <a class="button-link" href="<?= url("reply/update/{$reply->id}"); ?>">Edit</a>
                                 <a class="button-link delete" href="<?= url("reply/delete/{$reply->id}"); ?>">Delete</a>
@@ -75,5 +75,4 @@ foreach ($items as $item) :
             <?php endif;
         endforeach;
     endif;
-
 endforeach; ?>

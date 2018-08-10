@@ -20,7 +20,7 @@ $username = array_slice(explode('/', rtrim($url, '/')), -1)[0];
 
 ?><h1>User overview for <?= $username ?></h1>
 <?php foreach ($users as $user) :
-    if ($user->acronym == $username): ?>
+    if ($user->acronym == $username) : ?>
         <div class="user-overview">
             <?php $emailHash = md5(strtolower(trim($user->email))); ?>
             <img src="https://www.gravatar.com/avatar/<?= $emailHash ?>?s=100&d=identicon" class="figcenter" />
@@ -36,9 +36,11 @@ $username = array_slice(explode('/', rtrim($url, '/')), -1)[0];
             <h2 class="user-overview-h2">Replies by <?= $username ?></h2>
             <?php foreach ($replies as $reply) :
                 if ($user->email == $reply->email) :
-                    foreach ($items as $item) if ($item->id == $reply->commentId) : ?>
-                        Reply to: <a href="<?= url("comments/comment-view/{$reply->commentId}") ?>"><?= $item->title ?></a><br><br>
-                    <?php endif;
+                    foreach ($items as $item) :
+                        if ($item->id == $reply->commentId) : ?>
+                            Reply to: <a href="<?= url("comments/comment-view/{$reply->commentId}") ?>"><?= $item->title ?></a><br><br>
+                        <?php endif;
+                    endforeach;
                 endif;
             endforeach; ?>
         </div>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4dc477345b0fa0a245479db59686c1e4",
+    "content-hash": "cbdbebd0293ecd7e4090d28a0ede3814",
     "packages": [
         {
             "name": "anax/common",
@@ -496,16 +496,16 @@
         },
         {
             "name": "anax/textfilter",
-            "version": "v1.1.1",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/textfilter.git",
-                "reference": "6403976f29e21cb1cdbe031b5374b62296bdc519"
+                "reference": "8b265f42bf75aa84d37dfabee9a2b2d706fcedb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/textfilter/zipball/6403976f29e21cb1cdbe031b5374b62296bdc519",
-                "reference": "6403976f29e21cb1cdbe031b5374b62296bdc519",
+                "url": "https://api.github.com/repos/canax/textfilter/zipball/8b265f42bf75aa84d37dfabee9a2b2d706fcedb8",
+                "reference": "8b265f42bf75aa84d37dfabee9a2b2d706fcedb8",
                 "shasum": ""
             },
             "require": {
@@ -514,6 +514,11 @@
                 "michelf/php-smartypants": "^1.6",
                 "php": ">=7.0",
                 "scrivo/highlight.php": "^9.0"
+            },
+            "require-dev": {
+                "mustangostang/spyc": "^0.6.2",
+                "phpunit/phpunit": "^7",
+                "symfony/yaml": "^3.4"
             },
             "suggest": {
                 "ext-json": "*",
@@ -546,7 +551,7 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2018-06-26T11:33:05+00:00"
+            "time": "2018-08-10T12:11:34+00:00"
         },
         {
             "name": "anax/url",
@@ -849,16 +854,16 @@
         },
         {
             "name": "scrivo/highlight.php",
-            "version": "v9.12.0.3",
+            "version": "v9.12.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "959e4524ebbdbdd97913658ff32ef747d212d262"
+                "reference": "d5b40c678b79ac9faffb32df601dc69e5d11da50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/959e4524ebbdbdd97913658ff32ef747d212d262",
-                "reference": "959e4524ebbdbdd97913658ff32ef747d212d262",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/d5b40c678b79ac9faffb32df601dc69e5d11da50",
+                "reference": "d5b40c678b79ac9faffb32df601dc69e5d11da50",
                 "shasum": ""
             },
             "require-dev": {
@@ -900,29 +905,32 @@
                 "highlight.php",
                 "syntax"
             ],
-            "time": "2018-06-18T20:27:07+00:00"
+            "time": "2018-08-05T06:14:48+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.8.0",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "7cc359f1b7b80fc25ed7796be7d96adc9b354bae"
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/7cc359f1b7b80fc25ed7796be7d96adc9b354bae",
-                "reference": "7cc359f1b7b80fc25ed7796be7d96adc9b354bae",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e3d826245268269cd66f8326bd8bc066687b4a19",
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -955,20 +963,20 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2018-04-30T19:57:29+00:00"
+            "time": "2018-08-06T14:22:27+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.12",
+            "version": "v3.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "c5010cc1692ce1fa328b1fb666961eb3d4a85bb0"
+                "reference": "810af2d35fc72b6cf5c01116806d2b65ccaaf2e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/c5010cc1692ce1fa328b1fb666961eb3d4a85bb0",
-                "reference": "c5010cc1692ce1fa328b1fb666961eb3d4a85bb0",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/810af2d35fc72b6cf5c01116806d2b65ccaaf2e2",
+                "reference": "810af2d35fc72b6cf5c01116806d2b65ccaaf2e2",
                 "shasum": ""
             },
             "require": {
@@ -1014,7 +1022,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-03T23:18:14+00:00"
+            "time": "2018-07-26T11:19:56+00:00"
         }
     ],
     "packages-dev": [],
